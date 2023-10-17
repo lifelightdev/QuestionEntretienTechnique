@@ -9,9 +9,9 @@ import java.util.Set;
 @Table(name = "question")
 public class Question {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String question;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(joinColumns = @JoinColumn(name = "question_id"))
     private List<Reponse> reponses;
@@ -55,6 +55,14 @@ public class Question {
 
     public void setReponses(List<Reponse> reponses) {
         this.reponses = reponses;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
     public Long getId() {

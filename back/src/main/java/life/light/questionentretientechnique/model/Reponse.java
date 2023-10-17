@@ -6,9 +6,17 @@ import jakarta.persistence.*;
 @Table(name = "reponse")
 public class Reponse {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String reponse;
+
+    public String getReponse() {
+        return reponse;
+    }
+
+    public void setReponse(String reponse) {
+        this.reponse = reponse;
+    }
 
     public Long getId() {
         return id;

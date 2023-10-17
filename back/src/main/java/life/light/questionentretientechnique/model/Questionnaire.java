@@ -8,8 +8,7 @@ import java.util.List;
 @Table(name = "questionnaire")
 public class Questionnaire {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToMany(fetch = FetchType.EAGER)
